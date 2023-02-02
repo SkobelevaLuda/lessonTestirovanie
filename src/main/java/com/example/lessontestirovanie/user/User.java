@@ -4,21 +4,33 @@ import java.util.Objects;
 
 public class User {
 
-    private final String login;
-    private final String email;
+    public static String login;
+    public static String email;
 
     public User(String login, String email) {
-        this.login = login;
-        this.email = email;
+        if (login == null || login.isEmpty()) {
+            System.out.println("Ведите значение");
+        } else {
+            this.login = login;
+        }
+        if (email == null || email.isEmpty()) {
+            System.out.println("Введите корректное значение");
+        } else {
+            this.email = email;
+        }
     }
 
+    public User() {
+
+    }
 
     public String getLogin() {
         return login;
     }
 
-    public String getEmail() {
+    public static String getEmail() {
         return email;
+
     }
 
     @Override
