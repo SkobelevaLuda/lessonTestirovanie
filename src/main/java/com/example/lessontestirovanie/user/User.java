@@ -2,8 +2,8 @@ package com.example.lessontestirovanie.user;
 
 public class User {
 
-    public static String login;
-    public static String email;
+    public static String login="Tanechka";
+    public static String email = "Tanuchka@jhj.12";
 
     public User(String login, String email) {
         if (login == null || login.isEmpty()) {
@@ -28,8 +28,11 @@ public class User {
     }
 
     public static String getEmail() {
-      return email;
-
+        if(email.contains("@")&&email.contains(".")){
+            return email;
+        }else {
+            return null;
+        }
     }
 
     @Override

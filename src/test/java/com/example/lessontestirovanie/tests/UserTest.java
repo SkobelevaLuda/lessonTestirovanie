@@ -3,21 +3,16 @@ package com.example.lessontestirovanie.tests;
 import com.example.lessontestirovanie.user.User;
 import org.hamcrest.CoreMatchers;
 import org.hamcrest.MatcherAssert;
-import org.junit.Assert;
+
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
-
-import java.util.regex.Matcher;
-
-import static com.example.lessontestirovanie.user.User.*;
-import static org.hamcrest.CoreMatchers.*;
 
 
 public class UserTest {
 
     @Test
     public void getUser() {
-        User user = new User("Tanya@123", "tanmmya@123ya.ru");
+        User user1 = new User();
     }
 
     @Test
@@ -33,7 +28,7 @@ public class UserTest {
 
     @Test
     public void getEqulsLoginEmail() {
-        Assertions.assertEquals(User.getEmail(),User.getLogin());
+        Assertions.assertNotEquals(User.getEmail(),User.getLogin());
     }
 
 
