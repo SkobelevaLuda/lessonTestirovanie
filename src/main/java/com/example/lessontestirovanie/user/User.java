@@ -1,7 +1,5 @@
 package com.example.lessontestirovanie.user;
 
-import java.util.Objects;
-
 public class User {
 
     public static String login;
@@ -24,24 +22,18 @@ public class User {
 
     }
 
-    public String getLogin() {
+    public static String getLogin() {
+
         return login;
     }
 
     public static String getEmail() {
-        return email;
+      return email;
 
     }
 
     @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof User user)) return false;
-        return Objects.equals(login, user.login) && Objects.equals(email, user.email);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(login, email);
+    public boolean equals(Object obj) {
+        return super.equals(obj);
     }
 }
