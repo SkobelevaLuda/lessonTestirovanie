@@ -14,6 +14,9 @@ public class UserTest {
     public void getUserTest() {
 
         User user1 = new User("Tanech15","Tanya@15.ru");
+        assertNotNull(user1.getLogin(), user1.getEmail());
+
+
         assertNotEquals(user1.getLogin(),user1.getEmail());
     }
 
@@ -21,6 +24,7 @@ public class UserTest {
     public void getUserNOParametrsTest() {
 
         User user = new User();
+        assertNull(user.getLogin(),user.getEmail());
     }
 
     @Test
