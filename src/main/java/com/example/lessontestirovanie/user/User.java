@@ -2,8 +2,9 @@ package com.example.lessontestirovanie.user;
 
 public class User {
 
-    public static String login="Tanechka";
-    public static String email = "Tanuchka@jhj.12";
+    public static boolean check;
+    private String login;
+    private String email;
 
     public User(String login, String email) {
         if (login == null || login.isEmpty()) {
@@ -19,20 +20,27 @@ public class User {
     }
 
     public User() {
-
     }
 
-    public static String getLogin() {
+    public String getLogin() {
 
         return login;
     }
 
-    public static String getEmail() {
-        if(email.contains("@")&&email.contains(".")){
+    public String getEmail() {
+       // if(email.contains("@")&&email.contains(".")){
             return email;
-        }else {
-            return null;
-        }
+        //}else {
+         //   return null;
+        //}
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override

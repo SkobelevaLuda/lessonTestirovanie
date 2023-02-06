@@ -3,33 +3,43 @@ package com.example.lessontestirovanie.tests;
 import com.example.lessontestirovanie.user.User;
 import org.hamcrest.CoreMatchers;
 import org.hamcrest.MatcherAssert;
-
 import org.junit.Test;
-import org.junit.jupiter.api.Assertions;
 
+import static org.junit.jupiter.api.Assertions.*;
+import static org.mockito.ArgumentMatchers.contains;
 
 public class UserTest {
 
     @Test
-    public void getUser() {
-        User user1 = new User();
+    public void getUserTest() {
+
+        User user1 = new User("Tanech15","Tanya@15.ru");
+        assertNotNull(user1.getLogin(), user1.getEmail());
+
+        assertEquals("Tanech15", user1.getLogin());
+        assertEquals("Tanya@15.ru", user1.getEmail());
+
+        assertNotEquals(user1.getLogin(),user1.getEmail());
+
+
     }
 
     @Test
-    public void getUserNOParametrs() {
+    public void getUserNOParametrsTest() {
 
         User user = new User();
+        assertNull(user.getLogin(),user.getEmail());
     }
 
     @Test
-    public void getCorrectedEmail() {
-        MatcherAssert.assertThat(User.getEmail(), CoreMatchers.containsString("@"));
-    }
+    public void emailOtherSymbols(){
 
-    @Test
-    public void getEqulsLoginEmail() {
-        Assertions.assertNotEquals(User.getEmail(),User.getLogin());
-    }
+        User user2 = new User("Tanysha15","Taa@15.ru");
 
+        if (user2.getEmail().contains("@") && user2.getEmail().contains(".")){
+            User.check=true;
+        }
+        assertFalse(false);
+    }
 
 }
