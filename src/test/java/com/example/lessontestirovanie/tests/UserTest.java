@@ -16,8 +16,12 @@ public class UserTest {
         User user1 = new User("Tanech15","Tanya@15.ru");
         assertNotNull(user1.getLogin(), user1.getEmail());
 
+        assertEquals("Tanech15", user1.getLogin());
+        assertEquals("Tanya@15.ru", user1.getEmail());
 
         assertNotEquals(user1.getLogin(),user1.getEmail());
+
+
     }
 
     @Test
